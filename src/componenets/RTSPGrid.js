@@ -15,7 +15,6 @@ class RTSPGrid extends Component {
     };
 
     showUrl = (item, index) => {
-        //TODO: RESEARCH WHAT TO DO HERE
         return (
             <div key={index}>
                 <a href={item.url} onClick={() => this.showVideo(item.url)}>{item.url}</a>

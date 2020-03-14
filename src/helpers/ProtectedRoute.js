@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Route, Redirect} from 'react-router-dom';
 import {toast} from 'react-toastify';
 
+/* This helper is responsible for security routing and it applies fallback routes */
 class ProtectedRoute extends Component {
     render() {
         const {component: Component, ...props} = this.props;
