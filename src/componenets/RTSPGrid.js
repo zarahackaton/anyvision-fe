@@ -5,15 +5,20 @@ class RTSPGrid extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            rtspUrls: []
+            rtspUrls: [],
+            selectedVideoUrl: ''
         };
     }
+
+    showVideo = (url) => {
+        this.setState({selectedVideoUrl: url});
+    };
 
     showUrl = (item, index) => {
         //TODO: RESEARCH WHAT TO DO HERE
         return (
             <div key={index}>
-                <a href={item.url}>{item.url}</a>
+                <a href={item.url} onClick={() => this.showVideo(item.url)}>{item.url}</a>
             </div>
         );
     };
@@ -29,6 +34,9 @@ class RTSPGrid extends Component {
             <div className="mt-5">
                 <h1>RTSP Links</h1>
                 {this.state.rtspUrls.map(this.showUrl)}
+                {this.state.selectedVideoUrl &&
+                <iframe src={this.state.selectedVideoUrl} width="35%" height="300" />
+                }
             </div>
         );
     }

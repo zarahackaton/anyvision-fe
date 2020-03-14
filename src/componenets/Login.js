@@ -21,8 +21,6 @@ class Login extends Component {
             const result = await userApi.login(this.usernameRef.current.value, this.passwordRef.current.value);
             localStorage.setItem('accessToken', result.data.accessToken);
             localStorage.setItem('username', result.data.username);
-            console.log(result.data);
-            toast.success(result.data.message);
             window.location = '/';
         }
         catch (error) {
