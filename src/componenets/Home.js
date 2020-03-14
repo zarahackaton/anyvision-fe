@@ -21,7 +21,8 @@ class Home extends Component {
             this.props.history.push('/rtsp');
         }
         catch (error) {
-            toast.error(error.response.data.message);
+            toast.info(error.response.data.message);
+            this.props.history.push('/login');
         }
     };
 
